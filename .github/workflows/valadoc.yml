@@ -13,7 +13,7 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v3
       - name: Install dependencies
-        run: apt-get update && apt-get -y install libvala-dev valac meson libsoup2.4-dev libarchive-dev
+        run: apt-get update && apt-get -y install libvala-dev valac meson libsoup2.4-dev libarchive-dev git
       - name: Build
         run: meson build -Ddocumentation=true && ninja -C build
       - name: Deploy
