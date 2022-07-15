@@ -10,6 +10,8 @@ jobs:
     container: 
       image: elementary/docker:unstable
     steps:
+      - name: Checkout
+        uses: actions/checkout@v3
       - name: Install dependencies
         run: apt-get update && apt-get -y install libvala-dev valac meson libsoup2.4-dev libarchive-dev
       - name: Build
