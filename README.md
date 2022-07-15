@@ -1,7 +1,7 @@
-![CI](https://github.com/avojak/catalyst/actions/workflows/ci.yml/badge.svg)
-![Lint](https://github.com/avojak/catalyst/actions/workflows/lint.yml/badge.svg)
-![GitHub](https://img.shields.io/github/license/avojak/catalyst.svg?color=blue)
-![GitHub release (latest SemVer)](https://img.shields.io/github/v/release/avojak/catalyst?sort=semver)
+![CI](https://github.com/avojak/libcatalyst/actions/workflows/ci.yml/badge.svg)
+![Lint](https://github.com/avojak/libcatalyst/actions/workflows/lint.yml/badge.svg)
+![GitHub](https://img.shields.io/github/license/avojak/libcatalyst.svg?color=blue)
+![GitHub release (latest SemVer)](https://img.shields.io/github/v/release/avojak/libcatalyst?sort=semver)
 
 # Catalyst
 
