@@ -177,7 +177,7 @@ namespace Catalyst {
             }
             return 0;
         }
-        
+
     }
 
 }
