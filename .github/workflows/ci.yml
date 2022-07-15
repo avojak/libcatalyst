@@ -10,7 +10,7 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v3
       - name: Install dependencies
-        run: apt-get update && apt-get -y install libvala-dev valac meson
+        run: apt-get update && apt-get -y install libvala-dev valac meson libsoup2.4-dev
       - name: Build
         run: meson build && ninja -C build
       - name: Upload
@@ -26,7 +26,7 @@ jobs:
       image: elementary/docker:unstable
     steps:
       - name: Install dependencies
-        run: apt-get update && apt-get -y install libvala-dev valac meson
+        run: apt-get update && apt-get -y install libvala-dev valac meson libsoup2.4-dev
       - name: Download
         uses: actions/download-artifact@v1
         with:
