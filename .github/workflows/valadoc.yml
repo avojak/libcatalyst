@@ -19,6 +19,6 @@ jobs:
       - name: Build
         run: meson build -Ddocumentation=true && ninja -C build
       - name: Deploy
-        uses: JamesIves/github-pages-deploy-action@v4
+        uses: JamesIves/github-pages-deploy-action@v4.3.4
         with:
           folder: ./build/doc/catalyst-1-vala/
