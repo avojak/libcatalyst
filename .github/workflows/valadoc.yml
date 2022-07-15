@@ -15,8 +15,8 @@ jobs:
       - name: Install dependencies
         run: apt-get update && apt-get -y install libvala-dev valac meson libsoup2.4-dev libarchive-dev
       - name: Build
-        run: meson build && ninja -C build
+        run: meson build -Ddocumentation=true && ninja -C build
       - name: Deploy
         uses: JamesIves/github-pages-deploy-action@v4
         with:
-          folder: build/doc/catalyst-1-vala/
+          folder: ./build/doc/catalyst-1-vala/
