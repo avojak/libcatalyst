@@ -45,6 +45,14 @@ ninja -C build test
 
 There's also a Makefile if you're lazy like me and don't want to type those commands all the time.
 
+## Demo
+
+Some features are demonstrated through a simple demo application. To run the demo after installation:
+
+```bash
+catalyst-1-demo
+```
+
 ## Documentation
 
 The additional requirements for building the documentation are:
