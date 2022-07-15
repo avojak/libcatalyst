@@ -1,0 +1,8 @@
+[Desktop Entry]
+Name=Catalyst 1 Demo
+Comment=A demo of the Catalyst toolkit
+Exec=catalyst-demo
+Icon=applications-development
+Type=Application
+NoDisplay=true
+StartupWMClass=catalyst-demo
