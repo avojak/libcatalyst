@@ -27,10 +27,6 @@ install: $(NINJA_BUILD_FILE)
 lint:
 	io.elementary.vala-lint
 
-.PHONY: lint-fix
-lint-fix:
-	io.elementary.vala-lint --fix
-
 .PHONY: clean
 clean:
 	rm -rf $(BUILD_DIR) builddir/

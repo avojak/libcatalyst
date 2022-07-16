@@ -121,7 +121,7 @@ public class HttpView : Gtk.Grid {
             progress_value.set_text ("0MB / ?MB");
             status_label.set_text ("");
 
-            var context = new Catalyst.DownloadContext (url_entry.text.strip (),
+            var context = new Catalyst.Http.DownloadContext (url_entry.text.strip (),
                 GLib.File.new_for_path (file_chooser_entry.text.strip ()));
             context.progress.connect ((bytes_read, total_bytes) => {
                 Idle.add (() => {
@@ -148,14 +148,7 @@ public class HttpView : Gtk.Grid {
                 });
             });
             Catalyst.HttpUtils.download_file_async.begin (context, null, (obj, res) => {
-                try {
-                    Catalyst.HttpUtils.download_file_async.end (res);
-                } catch (GLib.Error e) {
-                    progress_bar.set_fraction (1.0);
-                    progress_bar.get_style_context ().add_provider (red_progress_provider,
-                        Gtk.STYLE_PROVIDER_PRIORITY_USER);
-                    status_label.set_text ("Failed: %s".printf (e.message));
-                }
+                Catalyst.HttpUtils.download_file_async.end (res);
             });
         });
     }

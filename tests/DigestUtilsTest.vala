@@ -38,11 +38,11 @@ public class Catalyst.DigestUtilsTest : GLib.Object {
 
     public static void main (string[] args) {
         GLib.Test.init (ref args);
-        GLib.Test.add_func ("/digest/md5", test_md5_digest);
-        GLib.Test.add_func ("/digest/sha1", test_sha1_digest);
-        GLib.Test.add_func ("/digest/sha256", test_sha256_digest);
-        GLib.Test.add_func ("/digest/sha384", test_sha384_digest);
-        GLib.Test.add_func ("/digest/sha512", test_sha512_digest);
+        GLib.Test.add_func ("/digest_utils/md5", test_md5_digest);
+        GLib.Test.add_func ("/digest_utils/sha1", test_sha1_digest);
+        GLib.Test.add_func ("/digest_utils/sha256", test_sha256_digest);
+        GLib.Test.add_func ("/digest_utils/sha384", test_sha384_digest);
+        GLib.Test.add_func ("/digest_utils/sha512", test_sha512_digest);
         GLib.Test.run ();
     }
 

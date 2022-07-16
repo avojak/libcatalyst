@@ -1,16 +1,33 @@
+conf_data = configuration_data()
+conf_data.set('MAJOR_VERSION', major_version)
+conf_data.set('MINOR_VERSION', minor_version)
+conf_data.set('MICRO_VERSION', micro_version)
+conf_data.set('VERSION_STRING', version_string)
+
+config_header = configure_file(
+    input: 'config.vala.in',
+    output: 'config.vala',
+    configuration: conf_data
+)
+
 libcatalyst_sources = files(
+    join_paths('Http', 'DownloadContext.vala'),
+    join_paths('Http', 'Http.vala'),
+    join_paths('Http', 'HttpUtils.vala'),
     'BigInteger.vala',
+    'ByteUtils.vala',
+    'EnumParseError.vala',
     'DigestUtils.vala',
-    'DownloadContext.vala',
+    'EnumUtils.vala',
     'FileUtils.vala',
-    'HttpUtils.vala',
     'Optional.vala',
-    'Supplier.vala'
+    'Supplier.vala',
+    # 'TextBufferUtils.vala'
 )
 
 # Define all the names and versions
 catalyst_gi_name = 'Catalyst'
-catalyst_gi_version = '1.0.0'
+catalyst_gi_version = version_string
 
 catalyst_gi = catalyst_gi_name + '-' + catalyst_gi_version
 catalyst_gir = catalyst_gi + '.gir'
@@ -24,15 +41,15 @@ include_dir = join_paths(
 
 libcatalyst = library(
     meson.project_name (),
-
+    config_header,
     libcatalyst_sources,
 
     dependencies: [
         libcatalyst_deps
     ],
 
-    vala_header: 'catalyst-1.h',
-    vala_vapi: 'catalyst-1.vapi',
+    vala_header: 'catalyst-' + major_version + '.h',
+    vala_vapi: 'catalyst-' + major_version + '.vapi',
     vala_gir: catalyst_gir,
 
     version: meson.project_version(),
@@ -76,7 +93,7 @@ catalyst_pc = pkgconfig.generate(
     libcatalyst,
     name: meson.project_name(),
     requires: libcatalyst_deps,
-    subdirs: ['catalyst-1'],
+    subdirs: ['catalyst-' + major_version],
     description: 'GLib utility library',
     version: meson.project_version(),
     url: 'https://github.com/avojak/catalyst',

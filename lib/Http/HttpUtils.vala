@@ -14,11 +14,11 @@ namespace Catalyst.HttpUtils {
     /**
      * Downloads the file at the given URL.
      *
-     * @param context a {@link Catalyst.DownloadContext} providing request details as well as a means of tracking
+     * @param context a {@link Catalyst.Http.DownloadContext} providing request details as well as a means of tracking
      *      progress and signaling completion/failure
      * @param cancellable a {@link GLib.Cancellable}
      */
-    public static void download_file_sync (Catalyst.DownloadContext context, GLib.Cancellable? cancellable = null) {
+    public static void download_file_sync (Catalyst.Http.DownloadContext context, GLib.Cancellable? cancellable = null) {
         // Create the session
         var session = new Soup.Session () {
             use_thread_context = true
@@ -84,11 +84,33 @@ namespace Catalyst.HttpUtils {
     /**
      * Downloads the file at the given URL asynchronously.
      *
-     * @param context a {@link Catalyst.DownloadContext} providing request details as well as a means of tracking
+     * ''Example''<<BR>>
+     * {{{
+     * public static int main (string[] args) {
+     *     var url = "https://example.com/foo.tgz";
+     *     var output_file = GLib.File.new_for_path ("./foo.tgz");
+     *     var context = new Catalyst.Http.DownloadContext (url, output_file);
+     *     context.progress.connect ((bytes_read, total_bytes) => {
+     *         // ...
+     *     });
+     *     context.complete.connect (() => {
+     *         // ...
+     *     });
+     *     context.failed.connect ((message, status_code) => {
+     *         // ...
+     *     });
+     *     Catalyst.HttpUtils.download_file_async.begin (context, null, (obj, res) => {
+     *         Catalyst.HttpUtils.download_file_async.end (res);
+     *     });
+     *     return 0;  
+     * }
+     * }}}
+     *
+     * @param context a {@link Catalyst.Http.DownloadContext} providing request details as well as a means of tracking
      *      progress and signaling completion/failure
      * @param cancellable a {@link GLib.Cancellable}
      */
-    public static async void download_file_async (Catalyst.DownloadContext context,
+    public static async void download_file_async (Catalyst.Http.DownloadContext context,
             GLib.Cancellable? cancellable = null) {
         GLib.SourceFunc callback = download_file_async.callback;
         new GLib.Thread<void> ("download", () => {
@@ -126,7 +148,7 @@ namespace Catalyst.HttpUtils {
      * on either the client or the server side.
      *
      * @param status_code the HTTP status code
-     * @return true if the status codes indicates an error, otherwise false
+     * @return //true// if the status codes indicates an error, otherwise //false//
      */
     public static bool is_error (uint status_code) {
         return is_client_error (status_code) || is_server_error (status_code);
@@ -137,7 +159,7 @@ namespace Catalyst.HttpUtils {
      * on on the client side (i.e. 4xx).
      *
      * @param status_code the HTTP status code
-     * @return true if the status codes indicates a client-side error, otherwise false
+     * @return //true// if the status codes indicates a client-side error, otherwise //false//
      */
     public static bool is_client_error (uint status_code) {
         return status_code >= 400 && status_code <= 499;
@@ -148,10 +170,42 @@ namespace Catalyst.HttpUtils {
      * on on the server side (i.e. 5xx).
      *
      * @param status_code the HTTP status code
-     * @return true if the status codes indicates a server-side error, otherwise false
+     * @return //true// if the status codes indicates a server-side error, otherwise //false//
      */
     public static bool is_server_error (uint status_code) {
         return status_code >= 500 && status_code <= 599;
+    }
+
+    /**
+     * Returns whether or not the given port number is valid.
+     *
+     * @param port_number the port number to validate
+     * @return //true// if the given port number is valid, otherwise //false//
+     */
+    public static bool validate_port (uint port_number) {
+        return port_number >= Catalyst.Http.MIN_PORT && port_number <= Catalyst.Http.MAX_PORT;
+    }
+
+    /**
+     * Returns a valid, random port number equally distrubted over the range provided
+     * by the lower and upper bounds.
+     *
+     * @param lower_bound the lower bound (inclusive) for obtaining the port number
+     * @param upper_bound the upper bound (inclusive) for obtaining the port number
+     * @return A new valid, random port number
+     */
+    public static uint random_port (uint lower_bound = Catalyst.Http.MIN_PORT, uint upper_bound = Catalyst.Http.MAX_PORT) {
+        return (uint) GLib.Random.int_range ((int32) lower_bound, (int32) upper_bound + 1);
+    }
+
+    /**
+     * Returns a valid, random port number equally distrubted over the range.
+     *
+     * @param port_range the {@link Catalyst.Http.PortRange}
+     * @return A new valid, random port number for the given port range
+     */
+    public static uint random_port_for_range (Catalyst.Http.PortRange port_range) {
+        return (uint) GLib.Random.int_range ((int32) port_range.get_minimum_port (), (int32) port_range.get_maximum_port () + 1);
     }
 
 }

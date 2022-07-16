@@ -1,5 +1,10 @@
 project('catalyst-1', 'vala', 'c', version: '1.0.0')
 
+major_version = '1'
+minor_version = '0'
+micro_version = '0'
+version_string = major_version + '.' + minor_version + '.' + micro_version
+
 if build_machine.system() == 'linux'
     vala_os_arg = ['--define=LINUX']
 elif build_machine.system() == 'dragonfly'

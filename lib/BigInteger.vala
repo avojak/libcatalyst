@@ -32,7 +32,7 @@ namespace Catalyst {
         }
 
         private BigInteger (string value) {
-            Object (value: value);
+            this.value = value;
         }
 
         public BigInteger.from_string (string str) throws BigIntegerParseError {
@@ -173,7 +173,12 @@ namespace Catalyst {
                 if (this_numeric == other_numeric) {
                     continue;
                 }
-                return (int) (this_numeric > other_numeric) - (int) (this_numeric < other_numeric);
+                var result = ((int) (this_numeric > other_numeric) - (int) (this_numeric < other_numeric));
+                // Comparison should be flipped for two negative values
+                if (both_negative) {
+                    result = -result;
+                }
+                return result;
             }
             return 0;
         }

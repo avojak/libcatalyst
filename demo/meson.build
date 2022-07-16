@@ -1,5 +1,5 @@
 executable(
-    'catalyst-1-demo',
+    'catalyst-' + major_version + '-demo',
 
     'CatalystDemo.vala',
     join_paths('Views', 'DigestView.vala'),
@@ -20,6 +20,6 @@ applications_dir = join_paths(
 )
 
 install_data(
-    'com.github.avojak.catalyst-1.demo.desktop',
+    'com.github.avojak.catalyst-' + major_version + '.demo.desktop',
     install_dir: applications_dir
 )

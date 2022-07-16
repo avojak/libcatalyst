@@ -7,7 +7,7 @@
  * Models the context of the download, including the URL, and target output file.
  * Provides the ability to monitor the progress of the download via signals.
  */
-public class Catalyst.DownloadContext : GLib.Object {
+public class Catalyst.Http.DownloadContext : GLib.Object {
 
     public string url { get; construct; }
     public GLib.File output_file { get; construct; }
@@ -30,7 +30,7 @@ public class Catalyst.DownloadContext : GLib.Object {
      * @param message an optional message describing the failure
      * @param status_code the HTTP status code of the response, if available
      */
-    public signal void failed (string? message, uint? status_code = null);
+    public signal void failed (string? message = null, uint? status_code = null);
 
     /**
      * There has been progress made during the download. When this signal is received,
