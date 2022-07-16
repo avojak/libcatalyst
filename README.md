@@ -2,14 +2,26 @@
 ![Lint](https://github.com/avojak/libcatalyst/actions/workflows/lint.yml/badge.svg)
 ![GitHub](https://img.shields.io/github/license/avojak/libcatalyst.svg?color=blue)
 ![GitHub release (latest SemVer)](https://img.shields.io/github/v/release/avojak/libcatalyst?sort=semver)
+[![Documentation](https://img.shields.io/badge/documentation-valadoc-a56de2)](https://avojak.com/libcatalyst/catalyst-1/)
 
 # Catalyst
 
 Catalyst is a companion library for GLib containing a collection of convenience functions and classes.
 
+Each function and class originated from scenarios I've come across and decided would be beneficial in a library like this.
+
+API documentation is available at: https://avojak.com/libcatalyst/catalyst-1/
+
 ## Features
 
-- TODO
+- Asynchronous and monitored downloading of files ([Catalyst.HttpUtils](https://avojak.com/libcatalyst/catalyst-1/Catalyst.HttpUtils.html))
+- Basic arithmetic of arbitrary-precision integers ([Catalyst.BigInteger](https://avojak.com/libcatalyst/catalyst-1/Catalyst.BigInteger.html))
+- Container class for objects which may or may not contain a null value ([Catalyst.Optional](https://avojak.com/libcatalyst/catalyst-1/Catalyst.Optional.html))
+- Enumarate all values on an enum ([Catalyst.EnumUtils](https://avojak.com/libcatalyst/catalyst-1/Catalyst.EnumUtils.html))
+- Compute checksums of files ([Catalyst.DigestUtils](https://avojak.com/libcatalyst/catalyst-1/Catalyst.DigestUtils.html))
+- Recursively copy, and list files ([Catalyst.FileUtils](https://avojak.com/libcatalyst/catalyst-1/Catalyst.FileUtils.html))
+
+And lots more!
 
 ## Example Usage
 
@@ -18,8 +30,6 @@ If using Meson, simply add the dependency:
 ```meson
 dependency('catalyst-1', version: '>= 1.0.0')
 ```
-
-TODO
 
 ## Building, Testing, and Installation
 
