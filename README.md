@@ -19,7 +19,7 @@ API documentation is available at: https://avojak.com/libcatalyst/catalyst-1/
 - Container class for objects which may or may not contain a null value ([Catalyst.Optional](https://avojak.com/libcatalyst/catalyst-1/Catalyst.Optional.html))
 - Enumarate all values on an enum ([Catalyst.EnumUtils](https://avojak.com/libcatalyst/catalyst-1/Catalyst.EnumUtils.html))
 - Compute checksums of files ([Catalyst.DigestUtils](https://avojak.com/libcatalyst/catalyst-1/Catalyst.DigestUtils.html))
-- Recursively copy, and list files ([Catalyst.FileUtils](https://avojak.com/libcatalyst/catalyst-1/Catalyst.FileUtils.html))
+- Recursively copy, delete, and list files ([Catalyst.FileUtils](https://avojak.com/libcatalyst/catalyst-1/Catalyst.FileUtils.html))
 
 And lots more!
 
