@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8"/>
+    <title>Catalyst.HttpUtils.download_file_async &ndash; catalyst-1 &ndash; Vala Binding Reference</title>
+    <link href="../style.css" rel="stylesheet" type="text/css"/><script src="../scripts.js" type="text/javascript">
+    </script>
+  </head>
+  <body>
+    <div class="site_header">Catalyst.HttpUtils.download_file_async &ndash; catalyst-1 Reference Manual</div>
+    <div class="site_body">
+      <div class="site_navigation">
+        <ul class="navi_main">
+          <li class="package_index"><a href="../index.html">Packages</a></li>
+        </ul>
+        <hr class="navi_hr"/>
+        <ul class="navi_main">
+          <li class="package"><a href="index.htm">catalyst-1</a></li>
+        </ul>
+        <hr class="navi_hr"/>
+        <ul class="navi_main">
+          <li class="namespace"><a href="Catalyst.html">Catalyst</a></li>
+        </ul>
+        <hr class="navi_hr"/>
+        <ul class="navi_main">
+          <li class="namespace"><a href="Catalyst.HttpUtils.html">HttpUtils</a></li>
+        </ul>
+        <hr class="navi_hr"/>
+        <ul class="navi_main">
+          <li class="method">download_file_async</li>
+          <li class="method"><a href="Catalyst.HttpUtils.download_file_sync.html">download_file_sync</a></li>
+          <li class="method"><a href="Catalyst.HttpUtils.get_as_string.html">get_as_string</a></li>
+          <li class="method"><a href="Catalyst.HttpUtils.is_client_error.html">is_client_error</a></li>
+          <li class="method"><a href="Catalyst.HttpUtils.is_error.html">is_error</a></li>
+          <li class="method"><a href="Catalyst.HttpUtils.is_server_error.html">is_server_error</a></li>
+          <li class="method"><a href="Catalyst.HttpUtils.random_port.html">random_port</a></li>
+          <li class="method"><a href="Catalyst.HttpUtils.random_port_for_range.html">random_port_for_range</a></li>
+          <li class="method"><a href="Catalyst.HttpUtils.validate_port.html">validate_port</a></li>
+        </ul>
+      </div>
+      <div class="site_content">
+        <h1 class="main_title">download_file_async</h1>
+        <hr class="main_hr"/>
+        <h2 class="main_title">Description:</h2>
+        <div class="main_code_definition"><span class="main_keyword">public</span> <span class="main_keyword">async</span> <span class="main_keyword">void</span> <b><span class="method">download_file_async</span></b> (<span class="main_type"><a href="Catalyst.Http.DownloadContext.html" class="class">DownloadContext</a></span> context, <span class="main_type"><span class="class">Cancellable</span></span>? cancellable = <span class="main_literal">null</span>)
+        </div>
+        <div class="description">
+          <p>Downloads the file at the given URL asynchronously.</p>
+          <p><b>Example</b><br/> <pre class="main_source"><code><span class="main_keyword">public</span> <span class="main_keyword">static</span> <span class="main_basic_type">int</span> main (<span class="main_basic_type">string</span>[] args) {<br/>    <span class="main_keyword">var</span> url = <span class="main_literal">"https://example.com/foo.tgz"</span>;<br/>    <span class="main_keyword">var</span> output_file = GLib.File.new_for_path (<span class="main_literal">"./foo.tgz"</span>);<br/>    <span class="main_keyword">var</span> context = <span class="main_keyword">new</span> Catalyst.Http.DownloadContext (url, output_file);<br/>    context.progress.connect ((bytes_read, total_bytes) =&gt; {<br/>        <span class="main_comment">// ...</span><br/>    });<br/>    context.complete.connect (() =&gt; {<br/>        <span class="main_comment">// ...</span><br/>    });<br/>    context.failed.connect ((message, status_code) =&gt; {<br/>        <span class="main_comment">// ...</span><br/>    });<br/>    Catalyst.HttpUtils.download_file_async.begin (context, <span class="main_literal">null</span>, (obj, res) =&gt; {<br/>        Catalyst.HttpUtils.download_file_async.end (res);<br/>    });<br/>    <span class="main_keyword">return</span> <span class="main_literal">0</span>;  <br/>}</code></pre>
+          </p>
+          <h2 class="main_title">Parameters:</h2>
+          <table class="main_parameter_table">
+            <tr>
+              <td class="main_parameter_table_name">context</td>
+              <td>
+                <p>a <a href="Catalyst.Http.DownloadContext.html" class="class">Catalyst.Http.DownloadContext</a> providing request details as well as
+                  a means of tracking progress and signaling completion/failure </p>
+              </td>
+            </tr>
+            <tr>
+              <td class="main_parameter_table_name">cancellable</td>
+              <td>
+                <p>a <span class="class">GLib.Cancellable</span> </p>
+              </td>
+            </tr>
+          </table>
+        </div><br/>
+        <div class="namespace_note"><b>Namespace:</b> <a href="Catalyst.HttpUtils.html">Catalyst.HttpUtils</a>
+        </div>
+        <div class="package_note"><b>Package:</b> <a href="index.htm">catalyst-1</a>
+        </div>
+      </div>
+    </div><br/>
+    <div class="site_footer">Generated by <a href="https://wiki.gnome.org/Projects/Valadoc"><kbd>valadoc</kbd></a>
+    </div>
+  </body>
+</html>

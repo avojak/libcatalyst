@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8"/>
+    <title>catalyst-1 &ndash; Vala Binding Reference</title>
+    <link href="../style.css" rel="stylesheet" type="text/css"/><script src="../scripts.js" type="text/javascript">
+    </script>
+  </head>
+  <body>
+    <div class="site_header">catalyst-1 Reference Manual</div>
+    <div class="site_body">
+      <div class="site_navigation">
+        <ul class="navi_main">
+          <li class="package_index"><a href="../index.html">Packages</a></li>
+        </ul>
+        <hr class="navi_hr"/>
+        <ul class="navi_main">
+          <li class="package">catalyst-1</li>
+        </ul>
+        <hr class="navi_hr"/>
+        <ul class="navi_main">
+          <li class="namespace"><a href="Catalyst.html">Catalyst</a></li>
+          <li class="namespace"><a href="Catalyst.ByteUtils.html">Catalyst.ByteUtils</a></li>
+          <li class="namespace"><a href="Catalyst.DigestUtils.html">Catalyst.DigestUtils</a></li>
+          <li class="namespace"><a href="Catalyst.EnumUtils.html">Catalyst.EnumUtils</a></li>
+          <li class="namespace"><a href="Catalyst.FileUtils.html">Catalyst.FileUtils</a></li>
+          <li class="namespace"><a href="Catalyst.Http.html">Catalyst.Http</a></li>
+          <li class="namespace"><a href="Catalyst.HttpUtils.html">Catalyst.HttpUtils</a></li>
+        </ul>
+      </div>
+      <div class="site_content">
+        <h1 class="main_title" id="catalyst-1">catalyst-1</h1>
+        <hr class="main_hr"/>
+        <h2 class="main_title">Description:</h2>
+        <h2 class="main_title">Content:</h2>
+        <h3 class="main_title">Namespaces:</h3>
+        <ul class="navi_inline">
+          <li class="namespace"><a href="Catalyst.html">Catalyst</a></li>
+          <h3 class="main_title">Classes:</h3>
+          <ul class="navi_inline">
+            <li class="class"><a href="Catalyst.BigInteger.html">BigInteger</a> - <span class="brief_description">Models an arbitrarily-large 
+                (positive or negative) integer value.</span></li>
+            <li class="class"><a href="Catalyst.Optional.html">Optional</a> - <span class="brief_description">A container object which may or may not 
+                contain a non-null value.</span></li>
+          </ul>
+          <h3 class="main_title">Error domains:</h3>
+          <ul class="navi_inline">
+            <li class="errordomain"><a href="Catalyst.BigIntegerParseError.html">BigIntegerParseError</a></li>
+            <li class="errordomain"><a href="Catalyst.EnumParseError.html">EnumParseError</a></li>
+          </ul>
+          <h3 class="main_title">Constants:</h3>
+          <ul class="navi_inline">
+            <li class="constant"><span class="leaf_code_definition"><span class="main_keyword">public</span> <span class="main_keyword">const</span> <span class="main_basic_type"><span class="struct">int</span></span> <b><a href="Catalyst.MAJOR_VERSION.html" class="constant">MAJOR_VERSION</a></b>
+              </span>
+              <div class="leaf_brief_description">
+              </div></li>
+            <li class="constant"><span class="leaf_code_definition"><span class="main_keyword">public</span> <span class="main_keyword">const</span> <span class="main_basic_type"><span class="struct">int</span></span> <b><a href="Catalyst.MICRO_VERSION.html" class="constant">MICRO_VERSION</a></b>
+              </span>
+              <div class="leaf_brief_description">
+              </div></li>
+            <li class="constant"><span class="leaf_code_definition"><span class="main_keyword">public</span> <span class="main_keyword">const</span> <span class="main_basic_type"><span class="struct">int</span></span> <b><a href="Catalyst.MINOR_VERSION.html" class="constant">MINOR_VERSION</a></b>
+              </span>
+              <div class="leaf_brief_description">
+              </div></li>
+            <li class="constant"><span class="leaf_code_definition"><span class="main_keyword">public</span> <span class="main_keyword">const</span> <span class="main_basic_type"><span class="class">string</span></span> <b><a href="Catalyst.VERSION_STRING.html" class="constant">VERSION_STRING</a></b>
+              </span>
+              <div class="leaf_brief_description">
+              </div></li>
+          </ul>
+          <h3 class="main_title">Delegates:</h3>
+          <ul class="navi_inline">
+            <li class="delegate"><span class="leaf_code_definition"><span class="main_keyword">public</span> <span class="main_keyword">delegate</span> <span class="main_type"><span>T</span></span> <b><a href="Catalyst.SupplyFunc.html" class="delegate">SupplyFunc</a></b>&lt;<b><span>T</span></b>&gt; ()
+              </span>
+              <div class="leaf_brief_description"><span class="brief_description">Supplies a value.</span>
+              </div></li>
+          </ul>
+          <li class="namespace"><a href="Catalyst.ByteUtils.html">ByteUtils</a> - <span class="brief_description">The ByteUtils namespace contains 
+              useful functions for operating on byte values.</span></li>
+          <h3 class="main_title">Methods:</h3>
+          <ul class="navi_inline">
+            <li class="method"><span class="leaf_code_definition"><span class="main_keyword">public</span> <span class="main_basic_type"><span class="struct">char</span></span> <b><a href="Catalyst.ByteUtils.clear_bit.html" class="method">clear_bit</a></b> (<span class="main_basic_type"><span class="struct">char</span></span> byte_value, <span class="main_basic_type"><span class="struct">size_t</span></span> position)
+              </span>
+              <div class="leaf_brief_description"><span class="brief_description">Clears the bit value at the given position within the byte. This has
+                  the effect of setting the bit value to 0.</span>
+              </div></li>
+            <li class="method"><span class="leaf_code_definition"><span class="main_keyword">public</span> <span class="main_basic_type"><span class="struct">bool</span></span> <b><a href="Catalyst.ByteUtils.get_bit.html" class="method">get_bit</a></b> (<span class="main_basic_type"><span class="struct">char</span></span> byte_value, <span class="main_basic_type"><span class="struct">size_t</span></span> position)
+              </span>
+              <div class="leaf_brief_description"><span class="brief_description">Gets the bit value at the given position within the byte.</span>
+              </div></li>
+            <li class="method"><span class="leaf_code_definition"><span class="main_keyword">public</span> <span class="main_basic_type"><span class="struct">char</span></span> <b><a href="Catalyst.ByteUtils.set_bit.html" class="method">set_bit</a></b> (<span class="main_basic_type"><span class="struct">char</span></span> byte_value, <span class="main_basic_type"><span class="struct">size_t</span></span> position)
+              </span>
+              <div class="leaf_brief_description"><span class="brief_description">Sets the bit value at the given position within the byte. This has 
+                  the effect of setting the bit value to 1.</span>
+              </div></li>
+          </ul>
+          <li class="namespace"><a href="Catalyst.DigestUtils.html">DigestUtils</a> - <span class="brief_description">The DigestUtils namespace 
+              contains useful functions for computing checksums.</span></li>
+          <h3 class="main_title">Methods:</h3>
+          <ul class="navi_inline">
+            <li class="method"><span class="leaf_code_definition"><span class="main_keyword">public</span> <span class="main_basic_type"><span class="class">string</span></span> <b><a href="Catalyst.DigestUtils.compute_for_file.html" class="method">compute_for_file</a></b> (<span class="main_type"><span class="enum">ChecksumType</span></span> checksum_type, <span class="main_type"><span class="interface">File</span></span> file) <span class="main_keyword">throws</span> <span class="main_type"><span class="class">Error</span></span>
+              </span>
+              <div class="leaf_brief_description"><span class="brief_description">Computes the checksum for a file.</span>
+              </div></li>
+          </ul>
+          <li class="namespace"><a href="Catalyst.EnumUtils.html">EnumUtils</a> - <span class="brief_description">The EnumUtils namespace contains 
+              useful functions for operating on enums.</span></li>
+          <h3 class="main_title">Methods:</h3>
+          <ul class="navi_inline">
+            <li class="method"><span class="leaf_code_definition"><span class="main_keyword">public</span> <span class="main_type"><span>T</span></span> <b><a href="Catalyst.EnumUtils.get_value_by_name.html" class="method">get_value_by_name</a></b>&lt;<b><span>T</span></b>&gt; (<span class="main_basic_type"><span class="class">string</span></span> name) <span class="main_keyword">throws</span> <span class="main_type"><a href="Catalyst.EnumParseError.html" class="errordomain">EnumParseError</a></span>
+              </span>
+              <div class="leaf_brief_description"><span class="brief_description">Retrieves the enum value for the given string name. The string name 
+                  is the value obtained when calling <i>to_string ()</i> on an enum value.</span>
+              </div></li>
+            <li class="method"><span class="leaf_code_definition"><span class="main_keyword">public</span> <span class="main_type"><span>T</span></span> <b><a href="Catalyst.EnumUtils.get_value_by_nick.html" class="method">get_value_by_nick</a></b>&lt;<b><span>T</span></b>&gt; (<span class="main_basic_type"><span class="class">string</span></span> nick) <span class="main_keyword">throws</span> <span class="main_type"><a href="Catalyst.EnumParseError.html" class="errordomain">EnumParseError</a></span>
+              </span>
+              <div class="leaf_brief_description"><span class="brief_description">Retrieves the enum value for the given string nick.</span>
+              </div></li>
+            <li class="method"><span class="leaf_code_definition"><span class="main_keyword">public</span> <span class="main_type"><span>T</span></span>[] <b><a href="Catalyst.EnumUtils.get_values.html" class="method">get_values</a></b>&lt;<b><span>T</span></b>&gt; ()
+              </span>
+              <div class="leaf_brief_description"><span class="brief_description">Retrieves all the values in the enum as an array.</span>
+              </div></li>
+          </ul>
+          <li class="namespace"><a href="Catalyst.FileUtils.html">FileUtils</a> - <span class="brief_description">The FileUtils namespace contains 
+              useful functions for handling files.</span></li>
+          <h3 class="main_title">Methods:</h3>
+          <ul class="navi_inline">
+            <li class="method"><span class="leaf_code_definition"><span class="main_keyword">public</span> <span class="main_keyword">void</span> <b><a href="Catalyst.FileUtils.copy_recursive.html" class="method">copy_recursive</a></b> (<span class="main_type"><span class="interface">File</span></span> src, <span class="main_type"><span class="interface">File</span></span> dest, <span class="main_type"><span class="enum">FileCopyFlags</span></span> flags = <b><span class="enumvalue">NONE</span></b>, <span class="main_type"><span class="class">Cancellable</span></span>? cancellable = <span class="main_literal">null</span>) <span class="main_keyword">throws</span> <span class="main_type"><span class="class">Error</span></span>
+              </span>
+              <div class="leaf_brief_description"><span class="brief_description">Performs a recursive copy from src to dest.</span>
+              </div></li>
+            <li class="method"><span class="leaf_code_definition"><span class="main_keyword">public</span> <span class="main_keyword">void</span> <b><a href="Catalyst.FileUtils.delete_recursive.html" class="method">delete_recursive</a></b> (<span class="main_type"><span class="interface">File</span></span> file, <span class="main_type"><span class="class">Cancellable</span></span>? cancellable = <span class="main_literal">null</span>) <span class="main_keyword">throws</span> <span class="main_type"><span class="class">Error</span></span>
+              </span>
+              <div class="leaf_brief_description"><span class="brief_description">Performs a recursive delete of the given directory. If the given 
+                  file is not a directory, but is a regular file, it will behave the same as <span class="abstract_method">GLib.File.delete</span>.
+                </span>
+              </div></li>
+            <li class="method"><span class="leaf_code_definition"><span class="main_keyword">public</span> <span class="main_basic_type"><span class="struct">bool</span></span> <b><a href="Catalyst.FileUtils.extract_archive.html" class="method">extract_archive</a></b> (<span class="main_type"><span class="interface">File</span></span> archive_file, <span class="main_type"><span class="interface">File</span></span> target)
+              </span>
+              <div class="leaf_brief_description"><span class="brief_description">Extracts an archive file.</span>
+              </div></li>
+            <li class="method"><span class="leaf_code_definition"><span class="main_keyword">public</span> <span class="main_basic_type"><span class="class">string</span></span>? <b><a href="Catalyst.FileUtils.get_extension.html" class="method">get_extension</a></b> (<span class="main_type"><span class="interface">File</span></span> file, <span class="main_basic_type"><span class="struct">bool</span></span> normalize = <span class="main_literal">true</span>)
+              </span>
+              <div class="leaf_brief_description"><span class="brief_description">Determines the extension for the given file.</span>
+              </div></li>
+            <li class="method"><span class="leaf_code_definition"><span class="main_keyword">public</span> <span class="main_type"><span class="interface">Collection</span></span>&lt;<span class="main_type"><span class="interface">File</span></span>&gt;? <b><a href="Catalyst.FileUtils.list_files.html" class="method">list_files</a></b> (<span class="main_type"><span class="interface">File</span></span> directory, <span class="main_basic_type"><span class="struct">bool</span></span> include_subdirs = <span class="main_literal">true</span>, <span class="main_type"><span class="class">Cancellable</span></span>? cancellable = <span class="main_literal">null</span>) <span class="main_keyword">throws</span> <span class="main_type"><span class="class">Error</span></span>
+              </span>
+              <div class="leaf_brief_description"><span class="brief_description">Lists all the files contained within the given parent directory.
+                </span>
+              </div></li>
+          </ul>
+          <li class="namespace"><a href="Catalyst.Http.html">Http</a> - <span class="brief_description">The Http namespace provides classes and 
+              consants for HTTP use-cases.</span></li>
+          <h3 class="main_title">Classes:</h3>
+          <ul class="navi_inline">
+            <li class="class"><a href="Catalyst.Http.DownloadContext.html">DownloadContext</a> - <span class="brief_description">Models the context of
+                the download, including the URL, and target output file. Provides the ability to monitor the progress of the download via signals.
+              </span></li>
+          </ul>
+          <h3 class="main_title">Enums:</h3>
+          <ul class="navi_inline">
+            <li class="enum"><a href="Catalyst.Http.PortRange.html">PortRange</a></li>
+          </ul>
+          <h3 class="main_title">Constants:</h3>
+          <ul class="navi_inline">
+            <li class="constant"><span class="leaf_code_definition"><span class="main_keyword">public</span> <span class="main_keyword">const</span> <span class="main_basic_type"><span class="struct">uint</span></span> <b><a href="Catalyst.Http.MAX_PORT.html" class="constant">MAX_PORT</a></b>
+              </span>
+              <div class="leaf_brief_description"><span class="brief_description">The maximum valid port number (65535)</span>
+              </div></li>
+            <li class="constant"><span class="leaf_code_definition"><span class="main_keyword">public</span> <span class="main_keyword">const</span> <span class="main_basic_type"><span class="struct">uint</span></span> <b><a href="Catalyst.Http.MIN_PORT.html" class="constant">MIN_PORT</a></b>
+              </span>
+              <div class="leaf_brief_description"><span class="brief_description">The minimum valid port number (0)</span>
+              </div></li>
+          </ul>
+          <li class="namespace"><a href="Catalyst.HttpUtils.html">HttpUtils</a> - <span class="brief_description">The HttpUtils namespace contains 
+              useful functions for executing HTTP requests.</span></li>
+          <h3 class="main_title">Methods:</h3>
+          <ul class="navi_inline">
+            <li class="method"><span class="leaf_code_definition"><span class="main_keyword">public</span> <span class="main_keyword">async</span> <span class="main_keyword">void</span> <b><a href="Catalyst.HttpUtils.download_file_async.html" class="method">download_file_async</a></b> (<span class="main_type"><a href="Catalyst.Http.DownloadContext.html" class="class">DownloadContext</a></span> context, <span class="main_type"><span class="class">Cancellable</span></span>? cancellable = <span class="main_literal">null</span>)
+              </span>
+              <div class="leaf_brief_description"><span class="brief_description">Downloads the file at the given URL asynchronously.</span>
+              </div></li>
+            <li class="method"><span class="leaf_code_definition"><span class="main_keyword">public</span> <span class="main_keyword">void</span> <b><a href="Catalyst.HttpUtils.download_file_sync.html" class="method">download_file_sync</a></b> (<span class="main_type"><a href="Catalyst.Http.DownloadContext.html" class="class">DownloadContext</a></span> context, <span class="main_type"><span class="class">Cancellable</span></span>? cancellable = <span class="main_literal">null</span>)
+              </span>
+              <div class="leaf_brief_description"><span class="brief_description">Downloads the file at the given URL.</span>
+              </div></li>
+            <li class="method"><span class="leaf_code_definition"><span class="main_keyword">public</span> <span class="main_basic_type"><span class="class">string</span></span> <b><a href="Catalyst.HttpUtils.get_as_string.html" class="method">get_as_string</a></b> (<span class="main_basic_type"><span class="class">string</span></span> url, <span class="main_type"><span class="class">Cancellable</span></span>? cancellable = <span class="main_literal">null</span>) <span class="main_keyword">throws</span> <span class="main_type"><span class="class">Error</span></span>
+              </span>
+              <div class="leaf_brief_description"><span class="brief_description">Retrieves the content at the given URL as a string.</span>
+              </div></li>
+            <li class="method"><span class="leaf_code_definition"><span class="main_keyword">public</span> <span class="main_basic_type"><span class="struct">bool</span></span> <b><a href="Catalyst.HttpUtils.is_client_error.html" class="method">is_client_error</a></b> (<span class="main_basic_type"><span class="struct">uint</span></span> status_code)
+              </span>
+              <div class="leaf_brief_description"><span class="brief_description">Returns whether or not the given HTTP status code indicates an error
+                  on on the client side (i.e. 4xx).</span>
+              </div></li>
+            <li class="method"><span class="leaf_code_definition"><span class="main_keyword">public</span> <span class="main_basic_type"><span class="struct">bool</span></span> <b><a href="Catalyst.HttpUtils.is_error.html" class="method">is_error</a></b> (<span class="main_basic_type"><span class="struct">uint</span></span> status_code)
+              </span>
+              <div class="leaf_brief_description"><span class="brief_description">Returns whether or not the given HTTP status code indicates an error
+                  on either the client or the server side.</span>
+              </div></li>
+            <li class="method"><span class="leaf_code_definition"><span class="main_keyword">public</span> <span class="main_basic_type"><span class="struct">bool</span></span> <b><a href="Catalyst.HttpUtils.is_server_error.html" class="method">is_server_error</a></b> (<span class="main_basic_type"><span class="struct">uint</span></span> status_code)
+              </span>
+              <div class="leaf_brief_description"><span class="brief_description">Returns whether or not the given HTTP status code indicates an error
+                  on on the server side (i.e. 5xx).</span>
+              </div></li>
+            <li class="method"><span class="leaf_code_definition"><span class="main_keyword">public</span> <span class="main_basic_type"><span class="struct">uint</span></span> <b><a href="Catalyst.HttpUtils.random_port.html" class="method">random_port</a></b> (<span class="main_basic_type"><span class="struct">uint</span></span> lower_bound = <b><a href="Catalyst.Http.MIN_PORT.html" class="constant">MIN_PORT</a></b>, <span class="main_basic_type"><span class="struct">uint</span></span> upper_bound = <b><a href="Catalyst.Http.MAX_PORT.html" class="constant">MAX_PORT</a></b>)
+              </span>
+              <div class="leaf_brief_description"><span class="brief_description">Returns a valid, random port number equally distrubted over the 
+                  range provided by the lower and upper bounds.</span>
+              </div></li>
+            <li class="method"><span class="leaf_code_definition"><span class="main_keyword">public</span> <span class="main_basic_type"><span class="struct">uint</span></span> <b><a href="Catalyst.HttpUtils.random_port_for_range.html" class="method">random_port_for_range</a></b> (<span class="main_type"><a href="Catalyst.Http.PortRange.html" class="enum">PortRange</a></span> port_range)
+              </span>
+              <div class="leaf_brief_description"><span class="brief_description">Returns a valid, random port number equally distrubted over the 
+                  range.</span>
+              </div></li>
+            <li class="method"><span class="leaf_code_definition"><span class="main_keyword">public</span> <span class="main_basic_type"><span class="struct">bool</span></span> <b><a href="Catalyst.HttpUtils.validate_port.html" class="method">validate_port</a></b> (<span class="main_basic_type"><span class="struct">uint</span></span> port_number)
+              </span>
+              <div class="leaf_brief_description"><span class="brief_description">Returns whether or not the given port number is valid.</span>
+              </div></li>
+          </ul>
+        </ul>
+      </div>
+    </div><br/>
+    <div class="site_footer">Generated by <a href="https://wiki.gnome.org/Projects/Valadoc"><kbd>valadoc</kbd></a>
+    </div>
+  </body>
+</html>
