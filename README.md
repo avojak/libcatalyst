@@ -25,7 +25,7 @@ And lots more!
 
 ## Example Usage
 
-If using Meson, simply add the dependency:
+If using Meson, simply add the dependency after installation:
 
 ```meson
 dependency('catalyst-1', version: '>= 1.0.0')
