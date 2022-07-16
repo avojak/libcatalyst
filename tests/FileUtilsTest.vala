@@ -11,18 +11,23 @@ public class Catalyst.FileUtilsTest : GLib.Object {
         var file = GLib.File.new_for_path (GLib.Test.get_filename (GLib.Test.FileType.DIST, "data", "sample.txt"));
         assert_true ("txt" == Catalyst.FileUtils.get_extension (file));
 
-        file = GLib.File.new_for_path (GLib.Test.get_filename (GLib.Test.FileType.DIST, "data", "some.folder", "SAMPLE.TXT"));
+        file = GLib.File.new_for_path (
+            GLib.Test.get_filename (GLib.Test.FileType.DIST, "data", "some.folder", "SAMPLE.TXT"));
         assert_true ("txt" == Catalyst.FileUtils.get_extension (file));
         assert_true ("TXT" == Catalyst.FileUtils.get_extension (file, false));
 
-        file = GLib.File.new_for_path (GLib.Test.get_filename (GLib.Test.FileType.DIST, "data", "some.folder", "sample"));
+        file = GLib.File.new_for_path (GLib.Test.get_filename (
+            GLib.Test.FileType.DIST, "data", "some.folder", "sample"));
         assert_null (Catalyst.FileUtils.get_extension (file));
     }
 
     private static void test_list_files () {
-        var file1 = GLib.File.new_for_path (GLib.Test.get_filename (GLib.Test.FileType.DIST, "data", "sample.txt"));
-        var file2 = GLib.File.new_for_path (GLib.Test.get_filename (GLib.Test.FileType.DIST, "data", "some.folder", "SAMPLE.TXT"));
-        var file3 = GLib.File.new_for_path (GLib.Test.get_filename (GLib.Test.FileType.DIST, "data", "some.folder", "sample"));
+        var file1 = GLib.File.new_for_path (GLib.Test.get_filename (
+            GLib.Test.FileType.DIST, "data", "sample.txt"));
+        var file2 = GLib.File.new_for_path (GLib.Test.get_filename (
+            GLib.Test.FileType.DIST, "data", "some.folder", "SAMPLE.TXT"));
+        var file3 = GLib.File.new_for_path (GLib.Test.get_filename (
+            GLib.Test.FileType.DIST, "data", "some.folder", "sample"));
 
         var dir = GLib.File.new_for_path (GLib.Test.get_filename (GLib.Test.FileType.DIST, "data"));
         try {
@@ -54,7 +59,7 @@ public class Catalyst.FileUtilsTest : GLib.Object {
         } catch (GLib.Error e) {
             GLib.Test.fail ();
         }
-        
+
         try {
             var file = GLib.File.new_for_path (GLib.Test.get_filename (GLib.Test.FileType.DIST, "data", "sample.txt"));
             assert_null (Catalyst.FileUtils.list_files (file));

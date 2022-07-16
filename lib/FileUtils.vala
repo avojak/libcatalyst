@@ -112,15 +112,16 @@ namespace Catalyst.FileUtils {
      *
      * @throws GLib.Error if an error occurs while enumerating the children
      */
-    public static Gee.Collection<GLib.File>? list_files (GLib.File directory, bool include_subdirs = true, GLib.Cancellable? cancellable = null) throws GLib.Error {
+    public static Gee.Collection<GLib.File>? list_files (GLib.File directory, bool include_subdirs = true,
+            GLib.Cancellable? cancellable = null) throws GLib.Error {
         Gee.Collection<GLib.File> children = new Gee.HashSet<GLib.File> ();
         GLib.FileType file_type = directory.query_file_type (GLib.FileQueryInfoFlags.NONE, cancellable);
         if (file_type != GLib.FileType.DIRECTORY) {
             return null;
         }
         GLib.FileEnumerator enumerator = directory.enumerate_children (
-            GLib.FileAttribute.STANDARD_NAME, 
-            GLib.FileQueryInfoFlags.NOFOLLOW_SYMLINKS, 
+            GLib.FileAttribute.STANDARD_NAME,
+            GLib.FileQueryInfoFlags.NOFOLLOW_SYMLINKS,
             cancellable);
         for (GLib.FileInfo? info = enumerator.next_file (cancellable);
                 info != null;

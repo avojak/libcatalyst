@@ -14,11 +14,12 @@ namespace Catalyst.HttpUtils {
     /**
      * Downloads the file at the given URL.
      *
-     * @param context a {@link Catalyst.Http.DownloadContext} providing request details as well as a means of tracking
-     *      progress and signaling completion/failure
+     * @param context a {@link Catalyst.Http.DownloadContext} providing request details as well
+     *      as a means of tracking progress and signaling completion/failure
      * @param cancellable a {@link GLib.Cancellable}
      */
-    public static void download_file_sync (Catalyst.Http.DownloadContext context, GLib.Cancellable? cancellable = null) {
+    public static void download_file_sync (Catalyst.Http.DownloadContext context,
+            GLib.Cancellable? cancellable = null) {
         // Create the session
         var session = new Soup.Session () {
             use_thread_context = true
@@ -194,7 +195,8 @@ namespace Catalyst.HttpUtils {
      * @param upper_bound the upper bound (inclusive) for obtaining the port number
      * @return A new valid, random port number
      */
-    public static uint random_port (uint lower_bound = Catalyst.Http.MIN_PORT, uint upper_bound = Catalyst.Http.MAX_PORT) {
+    public static uint random_port (uint lower_bound = Catalyst.Http.MIN_PORT,
+            uint upper_bound = Catalyst.Http.MAX_PORT) {
         return (uint) GLib.Random.int_range ((int32) lower_bound, (int32) upper_bound + 1);
     }
 
@@ -205,7 +207,8 @@ namespace Catalyst.HttpUtils {
      * @return A new valid, random port number for the given port range
      */
     public static uint random_port_for_range (Catalyst.Http.PortRange port_range) {
-        return (uint) GLib.Random.int_range ((int32) port_range.get_minimum_port (), (int32) port_range.get_maximum_port () + 1);
+        return (uint) GLib.Random.int_range ((int32) port_range.get_minimum_port (),
+            (int32) port_range.get_maximum_port () + 1);
     }
 
 }
