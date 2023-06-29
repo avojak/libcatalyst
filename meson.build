@@ -47,9 +47,12 @@ libcatalyst_deps = [
 pkgconfig = import('pkgconfig')
 
 subdir('lib')
-subdir('tests')
-subdir('demo')
-
+if get_option('build-tests')
+    subdir('tests')
+endif
+if get_option('demos')
+    subdir('demo')
+endif
 if get_option('documentation')
     subdir('doc')
 endif

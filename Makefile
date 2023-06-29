@@ -9,7 +9,7 @@ NINJA_BUILD_FILE := $(BUILD_DIR)/build.ninja
 all: lib test
 
 $(NINJA_BUILD_FILE):
-	meson build --prefix=/usr -Ddocumentation=true
+	meson build --prefix=/usr -Ddocumentation=true -Dbuild-tests=true -Ddemos=true
 
 .PHONY: lib
 lib: $(NINJA_BUILD_FILE)
