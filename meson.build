@@ -39,7 +39,7 @@ libcatalyst_deps = [
     gio_os_dep,
     dependency('glib-2.0', version: '>=' + glib_min_version),
     dependency('gobject-2.0', version: '>=' + glib_min_version),
-    dependency('libsoup-3.0', version: '>=3.4.2'),
+    dependency('libsoup-3.0', version: '>=3.0.7'),
     dependency('gee-0.8', version: '>= 0.20.3'),
     dependency('libarchive', version: '>= 3.4.0')
 ]
