@@ -14,7 +14,7 @@ jobs:
       - name: Install dependencies
         run: apt-get update && apt-get -y install libvala-dev valac meson libsoup-3.0-dev libarchive-dev
       - name: Build
-        run: meson build && ninja -C build
+        run: meson build -Dbuild-tests=true -Ddemos=true && ninja -C build
       - name: Upload
         uses: actions/upload-artifact@v1
         with:
