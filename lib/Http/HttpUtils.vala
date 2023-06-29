@@ -21,17 +21,17 @@ namespace Catalyst.HttpUtils {
     public static void download_file_sync (Catalyst.Http.DownloadContext context,
             GLib.Cancellable? cancellable = null) {
         // Create the session
-        var session = new Soup.Session () {
-            use_thread_context = true
-        };
-        var uri = new Soup.URI (context.url);
-        if (uri == null) {
+        var session = new Soup.Session ();
+        GLib.Uri uri;
+        try {
+            uri = GLib.Uri.parse (context.url, GLib.UriFlags.NONE);
+        } catch (GLib.UriError e) {
             context.failed ("Invalid URI: %s".printf (context.url));
             return;
         }
 
         // Send the request and obtain the input stream
-        var message = new Soup.Message.from_uri (HTTP_GET, new Soup.URI (context.url));
+        var message = new Soup.Message.from_uri (HTTP_GET, uri);
         GLib.DataInputStream input_stream;
         try {
             input_stream = new GLib.DataInputStream (session.send (message, cancellable));
@@ -132,10 +132,9 @@ namespace Catalyst.HttpUtils {
      * @throws GLib.Error if an error occurs while downloading the content
      */
     public static string get_as_string (string url, GLib.Cancellable? cancellable = null) throws GLib.Error {
-        var session = new Soup.Session () {
-            use_thread_context = true
-        };
-        var input_stream = new DataInputStream (session.request (url).send ());
+        var session = new Soup.Session ();
+        var message = new Soup.Message.from_uri (HTTP_GET, GLib.Uri.parse (url, GLib.UriFlags.NONE));
+        var input_stream = new DataInputStream (session.send (message, cancellable));
         var sb = new GLib.StringBuilder ();
         string? line;
         while ((line = input_stream.read_line ()) != null) {
